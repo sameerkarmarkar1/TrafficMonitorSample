@@ -65,15 +65,13 @@ with st.container():
         cities = data[CITY]
         areas = data[AREA]
         vehicleCounts = data[VEHICLE_COUNT]
-        print(vehicleCounts)
+    
         numberOfVehicles = []
         index = 0
 
         for currentCity in cities:
             if currentCity == city:
                 currentArea = areas[index]
-                print("Current area {}", currentArea)
-                print("Area {}", area)
                 if currentArea == area:
                     numberOfVehicles.append(vehicleCounts[index])
             index = index + 1
