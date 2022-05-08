@@ -6,15 +6,15 @@
 
 <body>
 
-  <div>Tools Used
+  <head>Tools Used
     <label>Programming Language: Python</label>
     <label>Frameworks: Pandas, Streamlit</label>
-  </div>
+  </head>
   
-  <div> Creators
+  <head> Creators
     <label> Sameer Karmarkar - 2021mt93110</label>
     <label> Mohammad Aamir Siddiqui - 2021mt93244 </label>
-  </div>
+  </head>
 
 </body>
 </html>
