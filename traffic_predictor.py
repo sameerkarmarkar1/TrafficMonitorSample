@@ -29,6 +29,8 @@ st.set_page_config(layout="wide")
 CITY = "City"
 AREA = "Area"
 VEHICLE_COUNT = "Number_Of_Vehicles"
+TIMEFRAME = "Timeframe"
+DATE = "Date"
 #DATA_URL = (
 #    "http://s3-us-west-2.amazonaws.com/streamlit-demo-data/uber-raw-data-sep14.csv.gz"
 #)
@@ -65,19 +67,175 @@ with st.container():
         cities = data[CITY]
         areas = data[AREA]
         vehicleCounts = data[VEHICLE_COUNT]
-        print(vehicleCounts)
+        timeframes = data[TIMEFRAME]
+        dates = data[DATE]
+
+        vehiclesFrom8To11 = 0
+        vehiclesFrom11To16 = 0
+        vehiclesFrom16To19 = 0
+        vehiclesFrom19To22 = 0
+
+
+        vehiclesFrom8To11_0101 = 0
+        vehiclesFrom11To16_0101 = 0
+        vehiclesFrom16To19_0101 = 0
+        vehiclesFrom19To22_0101 = 0
+
+        vehiclesFrom8To11_0102 = 0
+        vehiclesFrom11To16_0102 = 0
+        vehiclesFrom16To19_0102 = 0
+        vehiclesFrom19To22_0102 = 0
+
+        vehiclesFrom8To11_0103 = 0
+        vehiclesFrom11To16_0103 = 0
+        vehiclesFrom16To19_0103 = 0
+        vehiclesFrom19To22_0103 = 0
+
+        vehiclesFrom8To11_0104 = 0
+        vehiclesFrom11To16_0104 = 0
+        vehiclesFrom16To19_0104 = 0
+        vehiclesFrom19To22_0104 = 0
+
+        vehiclesFrom8To11_0105 = 0
+        vehiclesFrom11To16_0105 = 0
+        vehiclesFrom16To19_0105 = 0
+        vehiclesFrom19To22_0105 = 0
+
+        vehiclesFrom8To11_0106 = 0
+        vehiclesFrom11To16_0106 = 0
+        vehiclesFrom16To19_0106 = 0
+        vehiclesFrom19To22_0106 = 0
+
+        vehiclesFrom8To11_0107 = 0
+        vehiclesFrom11To16_0107 = 0
+        vehiclesFrom16To19_0107 = 0
+        vehiclesFrom19To22_0107 = 0
+
         numberOfVehicles = []
         index = 0
 
         for currentCity in cities:
             if currentCity == city:
                 currentArea = areas[index]
-                print("Current area {}", currentArea)
-                print("Area {}", area)
+
                 if currentArea == area:
-                    numberOfVehicles.append(vehicleCounts[index])
+                    currentTimeFrame = timeframes[index]
+                    if currentTimeFrame == '8 to 11':
+                        vehiclesFrom8To11 = vehiclesFrom8To11 + vehicleCounts[index]
+                        if dates[index] == '01.01.22':
+                            vehiclesFrom8To11_0101 = vehiclesFrom8To11_0101 + vehicleCounts[index]
+                        elif dates[index] == '02.01.22':
+                            vehiclesFrom8To11_0102 = vehiclesFrom8To11_0102 + vehicleCounts[index]
+                        elif dates[index] == '03.01.22':
+                            vehiclesFrom8To11_0103 = vehiclesFrom8To11_0103 + vehicleCounts[index]
+                        elif dates[index] == '04.01.22':
+                            vehiclesFrom8To11_0104 = vehiclesFrom8To11_0104 + vehicleCounts[index]
+                        elif dates[index] == '05.01.22':
+                            vehiclesFrom8To11_0105 = vehiclesFrom8To11_0105 + vehicleCounts[index]
+                        elif dates[index] == '06.01.22':
+                            vehiclesFrom8To11_0106 = vehiclesFrom8To11_0106 + vehicleCounts[index]
+                        elif dates[index] == '07.01.22':
+                            vehiclesFrom8To11_0107 = vehiclesFrom8To11_0107 + vehicleCounts[index]
+
+                    elif currentTimeFrame == '11 to 16':
+                        vehiclesFrom11To16 = vehiclesFrom11To16 + vehicleCounts[index]
+                        if dates[index] == '01.01.22':
+                            vehiclesFrom11To16_0101 = vehiclesFrom11To16_0101 + vehicleCounts[index]
+                        elif dates[index] == '02.01.22':
+                            vehiclesFrom11To16_0102 = vehiclesFrom11To16_0102 + vehicleCounts[index]
+                        elif dates[index] == '03.01.22':
+                            vehiclesFrom11To16_0103 = vehiclesFrom11To16_0103 + vehicleCounts[index]
+                        elif dates[index] == '04.01.22':
+                            vehiclesFrom11To16_0104 = vehiclesFrom11To16_0104 + vehicleCounts[index]
+                        elif dates[index] == '05.01.22':
+                            vehiclesFrom11To16_0105 = vehiclesFrom11To16_0105 + vehicleCounts[index]
+                        elif dates[index] == '06.01.22':
+                            vehiclesFrom11To16_0106 = vehiclesFrom11To16_0106 + vehicleCounts[index]
+                        elif dates[index] == '07.01.22':
+                            vehiclesFrom11To16_0107 = vehiclesFrom11To16_0107 + vehicleCounts[index]
+
+                    elif currentTimeFrame == '16 to 19':
+                        vehiclesFrom16To19 = vehiclesFrom16To19 + vehicleCounts[index]
+                        if dates[index] == '01.01.22':
+                            vehiclesFrom16To19_0101 = vehiclesFrom16To19_0101 + vehicleCounts[index]
+                        elif dates[index] == '02.01.22':
+                            vehiclesFrom16To19_0102 = vehiclesFrom16To19_0102 + vehicleCounts[index]
+                        elif dates[index] == '03.01.22':
+                            vehiclesFrom16To19_0103 = vehiclesFrom16To19_0103 + vehicleCounts[index]
+                        elif dates[index] == '04.01.22':
+                            vehiclesFrom16To19_0104 = vehiclesFrom16To19_0104 + vehicleCounts[index]
+                        elif dates[index] == '05.01.22':
+                            vehiclesFrom16To19_0105 = vehiclesFrom16To19_0105 + vehicleCounts[index]
+                        elif dates[index] == '06.01.22':
+                            vehiclesFrom16To19_0106 = vehiclesFrom16To19_0106 + vehicleCounts[index]
+                        elif dates[index] == '07.01.22':
+                            vehiclesFrom16To19_0107 = vehiclesFrom16To19_0107 + vehicleCounts[index]
+
+                    elif currentTimeFrame == '19 to 22':
+                        vehiclesFrom19To22 = vehiclesFrom19To22 + vehicleCounts[index]
+                        if dates[index] == '01.01.22':
+                            vehiclesFrom19To22_0101 = vehiclesFrom19To22_0101 + vehicleCounts[index]
+                        elif dates[index] == '02.01.22':
+                            vehiclesFrom19To22_0102 = vehiclesFrom19To22_0102 + vehicleCounts[index]
+                        elif dates[index] == '03.01.22':
+                            vehiclesFrom19To22_0103 = vehiclesFrom19To22_0103 + vehicleCounts[index]
+                        elif dates[index] == '04.01.22':
+                            vehiclesFrom19To22_0104 = vehiclesFrom19To22_0104 + vehicleCounts[index]
+                        elif dates[index] == '05.01.22':
+                            vehiclesFrom19To22_0105 = vehiclesFrom19To22_0105 + vehicleCounts[index]
+                        elif dates[index] == '06.01.22':
+                            vehiclesFrom19To22_0106 = vehiclesFrom19To22_0106 + vehicleCounts[index]
+                        elif dates[index] == '07.01.22':
+                            vehiclesFrom19To22_0107 = vehiclesFrom19To22_0107 + vehicleCounts[index]
+
             index = index + 1
 
-        chart_data = pd.DataFrame(numberOfVehicles)
-        st.bar_chart(chart_data)
+        numberOfVehicles.append(vehiclesFrom8To11)
+        numberOfVehicles.append(vehiclesFrom11To16)
+        numberOfVehicles.append(vehiclesFrom16To19)
+        numberOfVehicles.append(vehiclesFrom19To22)
+
+        data = pd.DataFrame([[vehiclesFrom8To11, 'Total', '08 am to 11 pm'],
+        [vehiclesFrom8To11_0101, '01 Jan', '08 am to 11 pm'],
+        [vehiclesFrom8To11_0102, '02 Jan', '08 am to 11 pm'],
+        [vehiclesFrom8To11_0103, '03 Jan', '08 am to 11 pm'],
+        [vehiclesFrom8To11_0104, '04 Jan', '08 am to 11 pm'],
+        [vehiclesFrom8To11_0105, '05 Jan', '08 am to 11 pm'],
+        [vehiclesFrom8To11_0106, '06 Jan', '08 am to 11 pm'],
+        [vehiclesFrom8To11_0107, '07 Jan', '08 am to 11 pm'],
+        [vehiclesFrom11To16, 'Total', '11 pm to 16 pm'],
+        [vehiclesFrom11To16_0101, '01 Jan', '11 pm to 16 pm'],
+        [vehiclesFrom11To16_0102, '02 Jan', '11 pm to 16 pm'],
+        [vehiclesFrom11To16_0103, '03 Jan', '11 pm to 16 pm'],
+        [vehiclesFrom11To16_0104, '04 Jan', '11 pm to 16 pm'],
+        [vehiclesFrom11To16_0105, '05 Jan', '11 pm to 16 pm'],
+        [vehiclesFrom11To16_0106, '06 Jan', '11 pm to 16 pm'],
+        [vehiclesFrom11To16_0107, '07 Jan', '11 pm to 16 pm'],
+        [vehiclesFrom16To19, 'Total', '16 pm to 19 pm'],
+        [vehiclesFrom16To19_0101, '01 Jan', '16 pm to 19 pm'],
+        [vehiclesFrom16To19_0102, '02 Jan', '16 pm to 19 pm'],
+        [vehiclesFrom16To19_0103, '03 Jan', '16 pm to 19 pm'],
+        [vehiclesFrom16To19_0104, '04 Jan', '16 pm to 19 pm'],
+        [vehiclesFrom16To19_0105, '05 Jan', '16 pm to 19 pm'],
+        [vehiclesFrom16To19_0106, '06 Jan', '16 pm to 19 pm'],
+        [vehiclesFrom16To19_0107, '07 Jan', '16 pm to 19 pm'],
+        [vehiclesFrom19To22, 'Total', '19 pm to 22 pm'],
+        [vehiclesFrom19To22_0101, '01 Jan', '19 pm to 22 pm'],
+        [vehiclesFrom19To22_0102, '02 Jan', '19 pm to 22 pm'],
+        [vehiclesFrom19To22_0103, '03 Jan', '19 pm to 22 pm'],
+        [vehiclesFrom19To22_0104, '04 Jan', '19 pm to 22 pm'],
+        [vehiclesFrom19To22_0105, '05 Jan', '19 pm to 22 pm'],
+        [vehiclesFrom19To22_0106, '06 Jan', '19 pm to 22 pm'],
+        [vehiclesFrom19To22_0107, '07 Jan', '19 pm to 22 pm']],
+        columns = ['Vehicle count', 'Date', 'Timeframe'])
+
+        gp_chart = alt.Chart(data).mark_bar().encode(
+          alt.Column('Timeframe'), alt.X('Date'),
+          alt.Y('Vehicle count', axis=alt.Axis(grid=False)),
+          alt.Color('Date'))
+
+        st.altair_chart(gp_chart, use_container_width=False)
+
+
+
 
